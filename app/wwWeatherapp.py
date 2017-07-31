@@ -15,7 +15,6 @@ zipcode = str(zipcode)
 
 baseurl = "https://query.yahooapis.com/v1/public/yql?"
 yql_query = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=" + zipcode +")"
-#yql_query = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='07302')"
 yql_url = baseurl + urllib.parse.urlencode({'q':yql_query}) + "&format=json"
 
 # ISSUE REQUEST
