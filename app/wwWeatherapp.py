@@ -27,36 +27,67 @@ raw_response = json.loads(response)
 results = raw_response["query"]["results"]["channel"]
 weather = results["item"]
 
+# PRINT STATEMENTS TO SEE DATA
 #print(results)
 #print(weather)
+
+conditions = (weather["condition"])
+forecast = (weather["forecast"])
+
+# CLOTHING RECOMMENDATIONS
+temp = conditions['temp']
+temp = int(temp)
+
+def clothingreco():
+    print("\n")
+    print("-------------------------")
+    print("\n")
+    print("CLOTHING RECOMMENDATION:")
+    print("\n")
+
+    if temp<0:
+        print("Considering it is",temp,"degrees outside, it's too cold. Stay inside!")
+    elif temp<51:
+        print("Considering it is",temp,"degrees outside, I recommend wearing a heavy coat!")
+    elif temp<65:
+        print("Considering it is",temp,"degrees outside, I recommend wearing a light coat.")
+    elif temp<71:
+        print("It is",temp,"degrees outside. Warm enough to wear a t-shirt!")
+    elif temp<96:
+        print("It is",temp,"degrees outside. Warm enough to wear a t-shirt and shorts! Don't forget the sunscreen!")
+    elif temp>95:
+        print("It is",temp,"degrees outside. Too HOT! Stay inside!!")
+    print("\n")
+    print("-------------------------")
+
+# PRINT CURRENT WEATHER CONDITIONS
 print("\n")
 print(weather["title"])
 print("Latitude: ", weather["lat"])
 print("Longitude: ", weather["long"])
 
-conditions = (weather["condition"])
 #print(conditions)
 
 #def what_to_wear():
 #    if conditions["text"]
 #Options = Thunderstorms, partly cloudy, rain, mostly cloudy
-
-print("Currently it is ",conditions["text"],"and",conditions['temp'],"degrees outside!")
-
-forecast = (weather["forecast"])
-
-#print("\n")
-#print(weather)
-#print("\n")
-#print(conditions)
 print("\n")
-#print(forecast)
-#forecast = dict(forecast)
-#for key, value in forecast.items() :
-#    print (key, value)
+print("Currently it is",conditions["text"],"and",conditions['temp'],"degrees outside!")
+print("\n")
 
+clothingreco()
+
+# PRINT WEATHER FORECAST
+
+
+print("\n")
+print("10 DAY FORECAST:")
+print("\n")
 for d in forecast:
     print("The forecast for", d["day"], d["date"], "is", d["text"], "with a high of", d["high"], "and a low of", d["low"])
+
+
+
 
 #print(forecast["day"])
 
