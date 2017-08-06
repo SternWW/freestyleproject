@@ -20,7 +20,7 @@ Install source code:
 
 ```shell
 git clone git@github.com:sternww/freestyleproject.git
-cd app
+cd freestyleproject
 ```
 ## Usage
 Check your weather!
