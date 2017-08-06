@@ -9,10 +9,6 @@ print("\n")
 zipcode = input("Please enter your zipcode: ")
 zipcode = str(zipcode)
 
-#while True:
-
-
-
 baseurl = "https://query.yahooapis.com/v1/public/yql?"
 yql_query = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=" + zipcode +")"
 yql_url = baseurl + urllib.parse.urlencode({'q':yql_query}) + "&format=json"
@@ -22,7 +18,6 @@ yql_url = baseurl + urllib.parse.urlencode({'q':yql_query}) + "&format=json"
 response = urllib.request.urlopen(yql_url).read()
 
 # PARSE RESPONSE
-
 raw_response = json.loads(response)
 results = raw_response["query"]["results"]["channel"]
 weather = results["item"]
@@ -31,6 +26,7 @@ weather = results["item"]
 #print(results)
 #print(weather)
 
+#SETTING UP COMMONLY USED ITEMS
 conditions = (weather["condition"])
 forecast = (weather["forecast"])
 
@@ -54,7 +50,7 @@ def clothingreco():
     elif temp<71:
         print("It is",temp,"degrees outside. Warm enough to wear a t-shirt!")
     elif temp<96:
-        print("It is",temp,"degrees outside. Warm enough to wear a t-shirt and shorts! Don't forget the sunscreen!")
+        print("It is",temp,"degrees outside. Warm enough to wear a t-shirt and shorts!")
     elif temp>95:
         print("It is",temp,"degrees outside. Too HOT! Stay inside!!")
     print("\n")
@@ -65,12 +61,6 @@ print("\n")
 print(weather["title"])
 print("Latitude: ", weather["lat"])
 print("Longitude: ", weather["long"])
-
-#print(conditions)
-
-#def what_to_wear():
-#    if conditions["text"]
-#Options = Thunderstorms, partly cloudy, rain, mostly cloudy
 print("\n")
 print("Currently it is",conditions["text"],"and",conditions['temp'],"degrees outside!")
 print("\n")
@@ -78,26 +68,9 @@ print("\n")
 clothingreco()
 
 # PRINT WEATHER FORECAST
-
-
 print("\n")
 print("10 DAY FORECAST:")
 print("\n")
 for d in forecast:
     print("The forecast for", d["day"], d["date"], "is", d["text"], "with a high of", d["high"], "and a low of", d["low"])
-
-
-
-
-#print(forecast["day"])
-
-#for day in forecast:
-
-#print(forecast[int("day")])
-
-
-#item = 'temp'
-
-#for key in weather.keys():
-#    if item in weather["condition"]:
-#        print(key)
+print("\n")
