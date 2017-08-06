@@ -10,7 +10,7 @@ This app takes a user-input zip code and outputs:
 4) A simple clothing recommendation based on temperature(and sometimes a reco not to go outside).
 5) A 10-day forecast for the location input
 
-BONUS: For certain current conditions, this app will also input a fun visual representation of the weather!
+BONUS: For certain current conditions, this app will also output a fun visual representation of the weather!
 
 ## Installation
 
