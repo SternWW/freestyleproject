@@ -3,6 +3,8 @@
 ## System Objectives:
 Take a user-input zip code and output current conditions, a clothing recommendation, and the forecast for that location.
 
+## Inputs & Outputs:
+
 This app takes a user-input zip code.
 
 This app outputs:
