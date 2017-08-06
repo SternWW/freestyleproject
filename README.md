@@ -26,6 +26,6 @@ cd freestyleproject
 Check your weather!
 
 ```shell
-python3 app/wwweather.py
+python3 app/wwweatherapp.py
 ```
 
