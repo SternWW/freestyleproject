@@ -29,3 +29,21 @@ Check your weather!
 python3 app/wwweatherapp.py
 ```
 
+ 
+                  .     :     .
+            .  :    |    :  .
+             .  |   |   |  ,
+              \  |     |  /
+          .     ,-'''''`-.     .
+            "- /  __ __  \ -"
+              |==|  I  |==|
+        - --- | _`--^--'_ | --- -
+              |'`.     ,'`|
+            _- \  "---"  / -_
+          .     `-.___,-'     .
+              /  |     |  |
+            .'  |   |   |  `.
+               :    |    :
+              .     :     .
+              
+Photo credit to http://www.ascii-art.de/ascii/s/sun.txt Philip Kaulfuss
