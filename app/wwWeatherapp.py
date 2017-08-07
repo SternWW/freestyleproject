@@ -17,8 +17,19 @@ yql_url = baseurl + urllib.parse.urlencode({'q':yql_query}) + "&format=json"
 
 response = urllib.request.urlopen(yql_url).read()
 
-# PARSE RESPONSE
+# BEGIN PARSING RESPONSE
 raw_response = json.loads(response)
+#ERROR HANDLING
+
+try:
+    results = raw_response["query"]["results"]["channel"]
+except: #Handling zip error
+    print("\n","ERROR: that zip code is invalid. Please start over.","\n")
+    import sys
+    sys.exit() #Closes the script
+
+# PARSE RESPONSE
+
 results = raw_response["query"]["results"]["channel"]
 weather = results["item"]
 
